@@ -26,15 +26,15 @@ class CAboutDlg : public CDialogEx
 public:
 	CAboutDlg();
 
-// 대화 상자 데이터입니다.
+	// 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_ABOUTBOX };
 #endif
 
-	protected:
+protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
 
-// 구현입니다.
+	// 구현입니다.
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -234,7 +234,7 @@ int CGLIMDlg::generateRandomNumber(int min, int max)
 
 void CGLIMDlg::moveCircle(int dx, int dy) {
 	unsigned char* fm = (unsigned char*)m_image.GetBits();
- 
+
 	drawCircle(fm, m_nX1, m_nY1, 0x0);
 	m_nX1 += dx;
 	m_nY1 += dy;
@@ -275,7 +275,7 @@ void CGLIMDlg::SaveImageAsBMP()
 	CString strPath(szPath);
 	int pos = strPath.ReverseFind(_T('\\'));
 	if (pos != -1) {
-		strPath = strPath.Left(pos + 1); 
+		strPath = strPath.Left(pos + 1);
 	}
 
 	CString imageFolder = strPath + _T("image\\");
@@ -301,7 +301,7 @@ void CGLIMDlg::SaveImageAsBMP()
 
 	CString fullFilePath = imageFolder + fileName;
 
-	HRESULT hResult = m_image.Save(fullFilePath, Gdiplus::ImageFormatBMP);  
+	HRESULT hResult = m_image.Save(fullFilePath, Gdiplus::ImageFormatBMP);
 	if (FAILED(hResult)) {
 		AfxMessageBox(_T("이미지 저장에 실패했습니다."));
 	}
@@ -356,7 +356,7 @@ void CGLIMDlg::FindCircleCenterAndDraw() {
 	if (count > 0) {
 		int centerX = sumX / count;
 		int centerY = sumY / count;
-		DrawXAndShowCoords(centerX, centerY); 
+		DrawXAndShowCoords(centerX, centerY);
 	}
 	else {
 		AfxMessageBox(_T("원을 찾을 수 없습니다."));
