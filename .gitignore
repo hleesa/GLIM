@@ -8,7 +8,6 @@
 # Visual Studio 관련
 .vs/
 .vscode/
-*.vcxproj*
 *.user
 *.suo
 *.ncb
