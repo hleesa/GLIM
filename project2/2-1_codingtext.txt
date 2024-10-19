@@ -1,0 +1,13 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int n, int k) {
+    constexpr int lambSkewerPrice = 12000;
+    constexpr int drinkPrice = 2000;
+    constexpr int serviceThreshold = 10;
+    const int freeDrinks = n / serviceThreshold;
+    const int price = n * lambSkewerPrice + (k - freeDrinks) * drinkPrice;
+    return price;
+}

@@ -1,0 +1,21 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<string> order) {
+    int price = 0;
+    const vector<string> menus = {"americano", "cafelatte", "anything"};
+    const vector<int> menuPrice = {4500, 5000, 4500};
+    
+    for(const string& orderdMenu : order){
+        for(size_t menuIdx = 0; menuIdx < menus.size(); ++menuIdx){
+            if (orderdMenu.find(menus[menuIdx]) != string::npos){
+                price += menuPrice[menuIdx];
+                break;
+            }
+        }
+    }
+    
+    return price;
+}
